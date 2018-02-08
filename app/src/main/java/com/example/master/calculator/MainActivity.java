@@ -1,7 +1,6 @@
 package com.example.master.calculator;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -10,11 +9,17 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.master.calculator.Listeners.DotListener;
+import com.example.master.calculator.Listeners.NumberListener;
+import com.example.master.calculator.Listeners.OperationButtonListener;
+import com.example.master.calculator.Listeners.equalListener;
+
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
-    private Button one,two,three,four,five,six,seven,eight,nine,zero,add,sub,div,equal,multi, dot, del,clear;
+    private Button one,two,three,four,five,six,seven,eight,nine,zero,add,sub,div,equal,multi, dot,
+            del,clear;
     private TextView display;
 
     private ListView listView;

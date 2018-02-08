@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -15,6 +16,8 @@ import com.example.master.calculator.Listeners.OperationButtonListener;
 import com.example.master.calculator.Listeners.equalListener;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends Activity {
 
@@ -74,6 +77,20 @@ public class MainActivity extends Activity {
 
         this.listView.setAdapter(ad);
 
+        this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String selectedItem = (String) adapterView.getItemAtPosition(i);
+                Pattern p = Pattern.compile("\\d+\\s.+\\s\\d+\\s=\\s(\\d+)");
+                Matcher m = p.matcher(selectedItem);
+                if (m.matches()){
+                    display.setText(m.group(1));
+                }
+
+            }
+        });
+
         equal = (Button) findViewById(R.id.equal);
         equalListener eqListener = new equalListener(display, this.listitems,ad);
         equal.setOnClickListener(eqListener);
@@ -117,6 +134,7 @@ public class MainActivity extends Activity {
 
             }
         });
+
 
 
 

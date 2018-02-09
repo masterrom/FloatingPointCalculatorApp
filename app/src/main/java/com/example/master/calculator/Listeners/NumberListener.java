@@ -1,6 +1,8 @@
 package com.example.master.calculator.Listeners;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,6 +31,8 @@ public class NumberListener implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
+
+
         Pattern dec = Pattern.compile("^([-]*[0-9]*)");
 
         Pattern decf = Pattern.compile("^(([-]*[0-9]+[.]?)[0-9]*)\\s(.)\\s(([-]*[0-9]*[.]?)[0-9]*)$"); //Applying Not notations, works since the text is a
@@ -41,6 +45,8 @@ public class NumberListener implements View.OnClickListener {
         Matcher m = dec.matcher(current);
         Matcher  m2 = decf.matcher(current);
         Matcher m3 = afterdot.matcher(current);
+
+
 
         if (m.matches() && m.group(1).toString().length() <= 15){
             current = current + ((Button)view).getText().toString();
@@ -60,4 +66,5 @@ public class NumberListener implements View.OnClickListener {
 
 
     }
+
 }

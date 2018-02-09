@@ -47,27 +47,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
         android:gravity="center"
-        android:layout_gravity="right"
+        android:layout_gravity="center"
         >
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btdborder"
+            android:text="1"
+            android:textSize="25sp"
+            tools:clickable="true"
+            android:visibility="invisible"
+            />
+
+        v<Button
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btdborder"
+        android:text="1"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        tools:clickable="true" />
 
 
         <Button
             style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:id="@+id/del"
+            android:textSize="25sp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btdborder"
             android:text="del" />
 
 
         <Button
             style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:id="@+id/clear"
+            android:textSize="25sp"
+            android:textColor="#b20000"
+            android:background="@drawable/btdborder"
             android:text="C" />
 
 
@@ -95,8 +123,6 @@
             android:background="@drawable/btdborder"
             android:text="1"
             android:textSize="25sp"
-
-
             tools:clickable="true" />
 
         <Button
@@ -332,6 +358,7 @@
             android:id="@+id/clHistory"
             android:textSize="10dp"
             android:gravity="top"
+
 
 
             />

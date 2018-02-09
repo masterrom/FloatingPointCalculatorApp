@@ -87,19 +87,17 @@
         >
 
 
-
-
         <Button
             android:id="@+id/num1"
             android:layout_width="60dp"
             android:layout_height="35dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/btdborder"
             android:text="1"
             android:textSize="25sp"
-            android:layout_marginRight="10dp"
 
 
-            />
+            tools:clickable="true" />
 
         <Button
             android:id="@+id/num2"
@@ -303,7 +301,9 @@
             android:layout_width="60dp"
             android:layout_height="35dp"
             android:background="@drawable/btdborder"
+            android:backgroundTint="#188fde"
             android:text="="
+            android:textColor="#ffffff"
             android:id="@+id/equal"
             android:textSize="25sp"
             />

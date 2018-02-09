@@ -10,6 +10,19 @@
     android:paddingLeft="10dp"
     tools:context="com.example.master.calculator.MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:text="Floating Point Converter"
+            android:id="@+id/floatingPage"
+            android:textSize="10dp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/display"
@@ -239,6 +252,34 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:paddingRight="10dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_margin="-10sp"
+            android:text="Clear History"
+            android:id="@+id/clHistory"
+            android:textSize="10dp"
+            android:gravity="top"
+
+
+            />
+
+    </LinearLayout>
+
 
     <ListView
         android:id="@+id/history"
@@ -247,6 +288,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:smoothScrollbar="true"
+        android:autofillHints="History"
 
         />
 

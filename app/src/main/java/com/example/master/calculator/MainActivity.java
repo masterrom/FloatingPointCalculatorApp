@@ -1,6 +1,7 @@
 package com.example.master.calculator;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -23,12 +24,14 @@ public class MainActivity extends Activity {
 
     private Button one,two,three,four,five,six,seven,eight,nine,zero,add,sub,div,equal,multi, dot,
             del,clear;
+
+    private Button clHistory,FloatingPage;
     private TextView display;
 
     private ListView listView;
 
     private ArrayList<String> listitems;
-
+    private ArrayAdapter ad;
 
     /*
     Main code structure:
@@ -47,6 +50,8 @@ public class MainActivity extends Activity {
 
 
         display = (TextView) findViewById(R.id.display);
+        clHistory = (Button) findViewById(R.id.clHistory);
+        FloatingPage = (Button) findViewById(R.id.floatingPage);
 
         NumberListener numListener = new NumberListener(display);
         DotListener dotListener = new DotListener(display);
@@ -73,7 +78,7 @@ public class MainActivity extends Activity {
 
         listView = (ListView) findViewById(R.id.history);
         this.listitems = new ArrayList<String>();
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listitems);
+        ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listitems);
 
         this.listView.setAdapter(ad);
 
@@ -123,6 +128,15 @@ public class MainActivity extends Activity {
         });
 
 
+        clHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listitems.clear();
+                ad.notifyDataSetChanged();
+            }
+        });
+
+
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,6 +146,14 @@ public class MainActivity extends Activity {
 
                 }
 
+            }
+        });
+
+
+        FloatingPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,Main2Activity.class));
             }
         });
 

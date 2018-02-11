@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.master.calculator.Listeners.DotListener;
 import com.example.master.calculator.Listeners.NumberListener;
@@ -53,7 +54,11 @@ public class MainActivity extends Activity {
         clHistory = (Button) findViewById(R.id.clHistory);
         FloatingPage = (Button) findViewById(R.id.floatingPage);
 
-        NumberListener numListener = new NumberListener(display);
+
+
+        NumberListener numListener = new NumberListener(display,this.getApplicationContext());
+
+
         DotListener dotListener = new DotListener(display);
 
         one = (Button) findViewById(R.id.num1);
@@ -159,9 +164,6 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this,Main2Activity.class));
             }
         });
-
-
-
 
 
 

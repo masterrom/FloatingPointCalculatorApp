@@ -15,6 +15,9 @@ import org.w3c.dom.Text;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static android.widget.Toast.LENGTH_SHORT;
+import static android.widget.Toast.makeText;
+
 /**
  * Created by Master on 25-Dec-17.
  */
@@ -22,9 +25,12 @@ import java.util.regex.Pattern;
 public class NumberListener implements View.OnClickListener {
 
     private TextView view;
+    private Context context;
 
-    public NumberListener(TextView view){
+    public NumberListener(TextView view, Context c){
+
         this.view = view;
+        this.context = c;
     }
 
 
@@ -48,18 +54,26 @@ public class NumberListener implements View.OnClickListener {
 
 
 
-        if (m.matches() && m.group(1).toString().length() <= 15){
+        if (m.matches() && m.group(1).toString().length() < 15){
             current = current + ((Button)view).getText().toString();
             this.view.setText(current);
 
-        }else if (m2.matches() && m2.group(4).toString().length() <= 15){
+        }else if (m2.matches() && m2.group(4).toString().length() < 15){
             current = current + ((Button)view).getText().toString();
             this.view.setText(current);
         }else if (m3.matches()){
             if (m3.group(1).length() < 10){
                 current = current + ((Button)view).getText().toString();
                 this.view.setText(current);
+            }else{
+                Toast toast = makeText(this.context,"Maximum 10 digits",LENGTH_SHORT);
+                toast.show();
             }
+        }else {
+
+            Toast toast = makeText(this.context,"Maximum 15 digits", LENGTH_SHORT);
+            toast.show();
+
         }
 
 

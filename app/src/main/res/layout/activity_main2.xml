@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:text="Min Val: 2^(-126) | Max val: 2^127"
-        android:paddingBottom="10"
+        android:paddingBottom="10dp"
         />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1 Bit [ 23 Bits ] 8 bits"
+        android:text="1 Bit [ 8 Bits ] 23 bits"
         android:textSize="15sp"
         android:paddingBottom="5dp"
         />

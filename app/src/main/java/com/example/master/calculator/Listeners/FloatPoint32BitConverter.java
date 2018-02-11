@@ -10,16 +10,17 @@ import android.widget.TextView;
 
 public class FloatPoint32BitConverter implements View.OnClickListener {
 
-    private TextView sign,mantissa,exponent;
+    private TextView sign,mantissa,exponent,allDisplay;
     private EditText uInput;
 
     public FloatPoint32BitConverter(TextView sign, TextView mantissa, TextView exponent,
-                                    EditText uInput){
+                                    EditText uInput, TextView finDisplay){
 
         this.sign = sign;
         this.mantissa = mantissa;
         this.exponent = exponent;
         this.uInput = uInput;
+        this.allDisplay = finDisplay;
 
     }
 
@@ -83,6 +84,7 @@ public class FloatPoint32BitConverter implements View.OnClickListener {
         this.sign.setText("Sign: " + sSign);
         this.exponent.setText("Exponent: " + sExponent);
         this.mantissa.setText("Mantissa: " + sMantissa);
+        this.allDisplay.setText(s);
 
     }
 }
